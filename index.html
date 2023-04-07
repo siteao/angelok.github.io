@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+  </head>
+    
+
+<body style="background-image: url('g.jpg'); background-size: cover; background-position: center/bottom; background-repeat: -y;">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Меню</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ссылочки
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://discord.gg/fwdb9qZXNC">Shmarovoz Squad</a></li>
+            <li><a class="dropdown-item" href="https://discord.gg/mADpAAfWB2">Торговая площадка</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://pornohub.com">Смотреть порно</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+  </nav>
+  
+  <div class="color">
+  <center> 
+    
+<div class="контейнер"> 
+  <div class="typewriter">
+    <h1>Привет! Я Илья Оскаров</h1>
+  <p> Я люблю
+    <span class="txt-type" data-wait="2000" 
+     data-words='["дрочить", "получать в рот", "продаваться в рабство", "быть нулем"]'></span>
+  </p>
+  </div>
+</div>
+  </center>
+  <div class="bottom-text">
+<p>Сайт создан ангелом ака лучший вебер в мире продам 2 строчки хтмла за 100 руб</p>
+  </div>
+  </div>
+
+
+  
+  <script>
+    class TypeWriter {
+  constructor(txtElement, words, wait = 3000) {
+    this.txtElement = txtElement;
+    this.words = JSON.parse(words);
+    this.wait = parseInt(wait, 10);
+    this.txt = '';
+    this.wordIndex = 0;
+    this.isDeleting = false;
+    this.type();
+  }
+
+  type() {
+    // Current index of word
+    const current = this.wordIndex % this.words.length;
+    // Get full text of current word
+    const fullTxt = this.words[current];
+
+    // Check if deleting
+    if(this.isDeleting) {
+      // Remove char
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      // Add char
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    // Insert txt into element
+    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    // Initial and typing speed
+    let typeSpeed = 150;
+
+    if(this.isDeleting) {
+      typeSpeed /= 2;
+    }
+
+    // If word is complete
+    if(!this.isDeleting && this.txt === fullTxt) {
+      // Pause at end
+      typeSpeed = this.wait;
+      // Set delete to true
+      this.isDeleting = true;
+
+    } else if(this.isDeleting && this.txt === '') {
+      // Reset
+      this.isDeleting = false;
+      // Next word
+      this.wordIndex++;
+      // Pause after word switch
+      typeSpeed = 1;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+// Init on DOM load
+document.addEventListener('DOMContentLoaded', init);
+
+// Init App
+function init() {
+  const txtElement = document.querySelector('.txt-type');
+  const words = txtElement.getAttribute('data-words');
+  const wait = txtElement.getAttribute('data-wait');
+  // Init typewriter
+  new TypeWriter(txtElement, words, wait);
+}
+
+    
+  </script>
+  
+</body>
+</html>
