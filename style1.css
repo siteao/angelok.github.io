@@ -2,6 +2,9 @@
   color: white;
   margin: 20pt;
 } 
+color span{
+font-family: "Times New Roman" 
+}
 }
 .typewriter p{
   overflow: hidden;
