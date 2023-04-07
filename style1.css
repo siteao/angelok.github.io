@@ -9,6 +9,7 @@ margin: 30pt;
 }
 }
 .typewriter p{
+color: red;
   overflow: hidden;
   border-right: .15em solid orange;
   white-space: nowrap;
