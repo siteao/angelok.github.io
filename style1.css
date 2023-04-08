@@ -1,3 +1,6 @@
+.container {
+overflow: auto;
+}
 .color {
   color: white;
   margin: 20pt;
